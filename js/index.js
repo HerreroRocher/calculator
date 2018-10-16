@@ -1,32 +1,34 @@
 $(document).ready(function(){
     var display = ""
-    var a, b, operator, result = "", previousdisplay = ""
+    var a, b, operator, result = "", previousdisplay = "", operand = ""
 
     $(".number").click(function(){
         console.log("number clicked");        
         var text = $(this).text();
-        display +=  text
+        operand +=  text
+        display = operand
         updatedisplay();
     })
 
     $("#clear").click(function(){
         console.log("clear clicked");        
         previousdisplay = display
-        display = ""
+        display = "0"
+        operand = ""
         updatedisplay();
     })
 
     $(".operator").click(function(){
         operator = this.id;
         console.log(operator + " clicked");  
-        a = display
-        display = ""
-        updatedisplay();
+        a = operand
+        operand = ""
+        updatedisplay(200);
     })
     
     $("#equals").click(function(){
         console.log("equals clicked");
-        b = display
+        b = operand
         switch(operator){
             case "plus":
             result = Number(a) + Number(b)
@@ -65,7 +67,7 @@ $(document).ready(function(){
     $("#square").click(function(){
         console.log("square root clicked");        
         display = Math.sqrt(display)
-        updatedisplay();
+        updatedisplay(400);
     })
  
     
@@ -78,26 +80,36 @@ $(document).ready(function(){
         $("#cubed").click(function(){
         console.log("cube root clicked");        
         display = Math.cbrt(display)
-        updatedisplay();
+        updatedisplay(400);
     })
   
     $("#poweroftwo").click(function(){
         console.log("square clicked");        
         display = Math.pow(display, 2)
-        updatedisplay();
+        updatedisplay(300);
     })
   
   
     $("#powerofthree").click(function(){
         console.log("cube clicked");        
         display = Math.pow(display, 3)
-        updatedisplay();
+        updatedisplay(300);
     })
    
-    function updatedisplay(){
+    function updatedisplay(delay){
         console.log("display = " + display);
+        if (typeof delay === "undefined"){
+            $("#display").text(display);
+        }
+        else{
+            console.log("Delay = " + delay)
+            $("#display").text("");
+            setTimeout(function(){
+                $("#display").text(display);
+            },delay)
 
-       $("#display").text(display);
+        }
+
 
     }
     

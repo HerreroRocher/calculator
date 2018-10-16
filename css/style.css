@@ -21,8 +21,8 @@
   /* padding-top: 70px; */
   background-color:rgb(160, 160, 160);
   border-style: dashed;
-  font-size: 50px;
-  font-family: Orbitron;
+  font-size: 90px;
+  font-family: ds-digitalnormal;
   text-align:right;
   vertical-align:text-bottom;
   color:black;
@@ -50,3 +50,12 @@ rgb(100, 100, 100)
 
 }
 
+
+@font-face {
+  font-family: 'ds-digitalnormal';
+  src: url('ds-digi-webfont.woff2') format('woff2'),
+       url('ds-digi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}

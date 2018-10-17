@@ -1,16 +1,25 @@
+body {
+  background-image: url(../calculator.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  width: 1000px;
+  height:1000px;
+  border: 2px dashed #333;
+}
+
 .button{
-  width: 80px;
-  height:70px;
+  width: 15px;
+  height:15px;
   background-color: #3d3c42;
   border: none;
   color: white;
-  padding: 40px 45px;
+  padding: 4px 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 25px;
   cursor:pointer;
-  border-radius: 13px;
+  border-radius: 3px;
   
   
    }
@@ -34,9 +43,8 @@
 }
 
 .panel{
-  background-color: #d2d2d7;
+  /* background-color: #d2d2d7; */
   cursor:default;
-  width:;
   height:930px
 }
 

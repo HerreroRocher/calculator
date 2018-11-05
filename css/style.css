@@ -2,35 +2,45 @@ body {
   background-image: url(../calculator.png);
   background-repeat: no-repeat;
   background-position: left top;
-  width: 1000px;
-  height:1000px;
+  width: 270px;
+  height:470px;
   border: 2px dashed #333;
 }
 
 .button{
-  width: 15px;
-  height:15px;
-  background-color: #3d3c42;
+  /* visibility: hidden; */
+  width: 14px;
+  height:12px;
+  margin:12px;
+  /* background-color:red; */
   border: none;
   color: white;
   padding: 4px 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 25px;
+  font-size: 15px;
   cursor:pointer;
   border-radius: 3px;
-  
-  
-   }
+  border: 1px dashed #333;
+}
+
+#buttonset{
+  margin-top:8px;
+}
+
+#plus{
+  margin-top:40px;
+}
 
 #display{
-  width:857px;
+  width:250px;
   height:80px;
-  /* padding-top: 70px; */
+  margin-top:58px;
+  padding-top: 18px;
   background-color:rgb(160, 160, 160);
   border-style: dashed;
-  font-size: 90px;
+  font-size: 70px;
   font-family: ds-digitalnormal;
   text-align:right;
   vertical-align:text-bottom;
@@ -45,19 +55,8 @@ body {
 .panel{
   /* background-color: #d2d2d7; */
   cursor:default;
-  height:930px
+  height:930px;
 }
-
-#equals{
-  background-color:rgb(11, 11, 175);
-}
-
-.number{
-  background-color:
-rgb(100, 100, 100)
-
-}
-
 
 @font-face {
   font-family: 'ds-digitalnormal';

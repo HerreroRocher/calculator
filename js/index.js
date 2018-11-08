@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var display = ""
     var a, b, operator, result = "", previousdisplay = "", operand = ""
+    var on = false 
 
     $(".number").click(function(){
         console.log("number clicked");        
@@ -15,19 +16,37 @@ $(document).ready(function(){
         previousdisplay = display
         display = "0"
         operand = ""
-        updatedisplay();
+        updatedisplay(50);
+    })
+    
+    $("#allclear").click(function(){
+        console.log("all clear clicked");        
+        previousdisplay = display
+        display = "0"
+        operand = ""
+        on = true
+        updatedisplay(50);
     })
 
+    $("#off").click(function(){
+        console.log("off clicked");        
+        previousdisplay = display
+        display = ""
+        operand = ""
+        on = false
+        updatedisplay(50);
+    })
+    
     $(".operator").click(function(){
         operator = this.id;
         console.log(operator + " clicked");  
         a = operand
         operand = ""
-        updatedisplay(200);
+        updatedisplay(100);
     })
     
     $("#equals").click(function(){
-        console.log("equals clicked");
+        console.log("equals clicked, operand is %s, operator is %s", operand, operator );
         b = operand
         switch(operator){
             case "plus":
@@ -54,13 +73,16 @@ $(document).ready(function(){
             result = Math.pow(Number(a), Number(b))
             
         }
-         display = previousdisplay = result  
-         updatedisplay();
+        
+        console.log("result =  " + result)
+        display = previousdisplay = result
+        updatedisplay();
     })
 
     $("#invert").click(function(){
         console.log("invert clicked");        
         display =  -display
+        operand = display
         updatedisplay();
     })
 
@@ -97,6 +119,15 @@ $(document).ready(function(){
     })
    
     function updatedisplay(delay){
+
+        if(on === false){
+            display = ""
+            console.log("turn off");    
+            $("#display").text(display);
+            return
+        }
+
+        display = display.toString().substring(0,8) 
         console.log("display = " + display);
         if (typeof delay === "undefined"){
             $("#display").text(display);
@@ -109,8 +140,5 @@ $(document).ready(function(){
             },delay)
 
         }
-
-
     }
-    
 })

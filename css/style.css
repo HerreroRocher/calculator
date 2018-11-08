@@ -27,6 +27,26 @@ body {
   border: 1px dashed #333;
 }
 
+.dummybutton{
+  /* change to 100 to see buttons */
+  opacity: 0;  
+  width: 39px;
+  height:40px;
+  line-height: 50px;
+  margin:3px;
+  background-color:yellowgreen;
+  border: dashed;
+  color: white;
+  /* padding: 1px 1px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  cursor:pointer;
+  border-radius: 16px;
+  border: 1px dashed #333;
+}
+
 #buttonset{
   margin-top:8px;
   margin-left:5px;
